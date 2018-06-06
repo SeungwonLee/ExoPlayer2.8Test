@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.exoextensiontest">
+
+    <!-- For http video load -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".video.SimplePlayerActivity"/>
+        <activity android:name=".video.AdsLoaderActivity"/>
+
+        <activity android:name=".audio.AudioServiceActivity"/>
+        <service android:name=".audio.AudioPlayerService"/>
+
+        <activity android:name=".audio.cache.CacheAudioServiceActivity"/>
+        <service android:name=".audio.cache.CacheAudioPlayerService"/>
+        <service android:name=".audio.cache.AudioDownloadService"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
